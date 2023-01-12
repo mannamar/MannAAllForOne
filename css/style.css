@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap');
 
-body {
-    background-color: lightpink;
-}
-
 h1 {
     color: white;
     font-family: 'Outfit', sans-serif;
@@ -20,6 +16,7 @@ h1 {
     font-family: 'Inter', sans-serif;
     font-size: 32px;
     font-weight: bold;
+    padding-left: 10px;
 }
 
 .nav-link {
@@ -27,6 +24,7 @@ h1 {
     font-size: 16px;
     font-weight: bold;
     color: white;
+    padding-right: 10px;
 }
 
 .superLarge {
