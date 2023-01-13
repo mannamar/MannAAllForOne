@@ -107,3 +107,19 @@ function byEmail(input) {
         output.textContent = "Enter a valid response";
     }
 }
+
+function populateDropdown() {
+    fetch("https://allinoneendpoints.azurewebsites.net/studentdirectory/AllStudents").then(
+        response => response.json()
+    ).then(
+        data => {
+            for (let i = 0; i < data.length; i++) {
+                console.log(data[i].firstName + " " + data[i].lastName);
+                studentList.innerHTML += `<option value="${data[i].firstName}">${data[i].firstName} ${data[i].lastName}</option>`
+            }
+        }
+    )
+}
+
+// Call function to populate student drop-down
+populateDropdown();
