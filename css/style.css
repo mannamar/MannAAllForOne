@@ -95,3 +95,12 @@ h2 {
 .sec-row {
     padding-top: 60px;
 }
+
+.text-righty {
+    text-align: right;
+}
+
+.dir-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+}
