@@ -116,6 +116,7 @@ function populateDropdown() {
             for (let i = 0; i < data.length; i++) {
                 console.log(data[i].firstName + " " + data[i].lastName);
                 studentList.innerHTML += `<option value="${data[i].firstName}">${data[i].firstName} ${data[i].lastName}</option>`
+                // Scott showed us how to do this via document.createElement('option'), element.textContent == id, and element.value == firstName -- probably should look into those
             }
         }
     )
