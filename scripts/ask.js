@@ -1,3 +1,4 @@
+let nameInput = document.getElementById("nameInput");
 let timeInput = document.getElementById("timeInput");
 let output = document.getElementById("output");
 let submitBtn = document.getElementById("submitBtn");
@@ -8,8 +9,19 @@ let savedInput = "";
 let sayHelloUrl = "";
 
 submitBtn.addEventListener("click", function(){
-    // helloApi(nameInput); // Using Scott's Example
-    ask(timeInput);
+    ask(nameInput, timeInput);
+});
+
+nameInput.addEventListener("keypress", function(key){
+    if (key.key === "Enter") {
+        ask(nameInput, timeInput);
+    }
+});
+
+timeInput.addEventListener("keypress", function(key){
+    if (key.key === "Enter") {
+        ask(nameInput, timeInput);
+    }
 });
 
 function urlCall(url){
@@ -23,10 +35,10 @@ function urlCall(url){
     )
 }
 
-function ask(timeInput) {
-    if(timeInput.value) {
-        savedInput = timeInput.value;
-        sayHelloUrl = "https://allinoneendpoints.azurewebsites.net/minichallenge/askquestions/Jeff/" + savedInput;
+function ask(nameInput, timeInput) {
+    if(nameInput.value && timeInput.value) {
+        // savedInput = timeInput.value;
+        sayHelloUrl = `https://allinoneendpoints.azurewebsites.net/minichallenge/askquestions/${nameInput.value}/${timeInput.value}/`;
         urlCall(sayHelloUrl);
     } else {
         output.textContent = "Enter a valid response";

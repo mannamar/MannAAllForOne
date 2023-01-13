@@ -12,6 +12,13 @@ helloSubBtn.addEventListener("click", function(){
     sayHello(nameInput);
 });
 
+nameInput.addEventListener("keypress", function(key){
+    // helloApi(nameInput); // Using Scott's Example
+    if (key.key === "Enter") {
+        sayHello(nameInput);
+    }
+});
+
 function urlCall(url){
     fetch(url).then(
         response => response.text()
