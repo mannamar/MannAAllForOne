@@ -8,8 +8,13 @@ let savedInput = "";
 let sayHelloUrl = "";
 
 submitBtn.addEventListener("click", function(){
-    // helloApi(nameInput); // Using Scott's Example
     reverseIt(stringInput);
+});
+
+stringInput.addEventListener("keypress", function(key) {
+    if (key.key === "Enter") {
+        reverseIt(stringInput);
+    }
 });
 
 function urlCall(url){

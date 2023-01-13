@@ -1,15 +1,17 @@
-let stringInput = document.getElementById("stringInput");
+// let stringInput = document.getElementById("stringInput");
+let foodList = document.getElementById("foodList");
 let output = document.getElementById("output");
 let submitBtn = document.getElementById("submitBtn");
 
 // console.log(nameInput, helloReturn, helloSubBtn); // Log variables to console
 
-let savedInput = "";
-let sayHelloUrl = "";
 
 submitBtn.addEventListener("click", function(){
-    // helloApi(nameInput); // Using Scott's Example
-    addTwo(stringInput);
+    pickFood(foodList);
+});
+
+foodList.addEventListener("change", function(){
+    pickFood(foodList);
 });
 
 function urlCall(url){
@@ -23,11 +25,11 @@ function urlCall(url){
     )
 }
 
-function addTwo(stringInput) {
+function pickFood(stringInput) {
     if(stringInput.value) {
-        savedInput = stringInput.value;
-        sayHelloUrl = "https://allinoneendpoints.azurewebsites.net/minichallenge/restaurantpicker/" + savedInput;
-        urlCall(sayHelloUrl);
+        let savedInput = stringInput.value;
+        let apiUrl = "https://allinoneendpoints.azurewebsites.net/minichallenge/restaurantpicker/" + savedInput;
+        urlCall(apiUrl);
     } else {
         output.textContent = "Enter a valid response";
     }

@@ -28,14 +28,20 @@
         <div class="row gx-35">
             <div class="col-6">
                 <h2>Pick a type of food:</h2>
-                <input name="" id="nameInput" class="form w-100 inp-fld " type="text" placeholder="Mexican">
+                <!-- <input name="" id="stringInput" class="form w-100 inp-fld " type="text" placeholder="Mexican"> -->
+                <select name="cars" id="foodList" class="form w-100 inp-fld " type="text" >
+                    <!-- <option value="Random">Random</option> -->
+                    <option value="mexican">Mexican</option>
+                    <option value="asian">Asian</option>
+                    <option value="fast-food">Fast-Food</option>
+                  </select>
                 <div class="row d-flex justify-content-center">
-                    <button class="btn btn-dark btn-submit">Submit</button>
+                    <button id="submitBtn" class="btn btn-dark btn-submit">Submit</button>
                 </div>
             </div>
             <div class="col-6">
                 <h2>Output:</h2>
-                <p id ="helloReturn" class="output">You should try Taco Bell!</p>
+                <p id ="output" class="output">You should try Taco Bell!</p>
             </div>
         </div>
 
