@@ -37,7 +37,6 @@ function urlCall(url){
 
 function addTwo(num1input, num2Input) {
     if(num1Input.value && num2Input.value) {
-        // savedInput = num2Input.value;
         sayHelloUrl = `https://allinoneendpoints.azurewebsites.net/minichallenge/addnumbers/${num1Input.value}/${num2Input.value}`;
         urlCall(sayHelloUrl);
     } else {

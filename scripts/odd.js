@@ -12,6 +12,12 @@ submitBtn.addEventListener("click", function(){
     oddOrEven(numInput);
 });
 
+numInput.addEventListener("keypress", function(key){
+    if (key.key === "Enter") {
+        oddOrEven(numInput);
+    }
+});
+
 function urlCall(url){
     fetch(url).then(
         response => response.text()
@@ -25,8 +31,7 @@ function urlCall(url){
 
 function oddOrEven(numInput) {
     if(numInput.value) {
-        savedInput = numInput.value;
-        sayHelloUrl = "https://allinoneendpoints.azurewebsites.net/minichallenge/oddoreven/" + savedInput;
+        sayHelloUrl = "https://allinoneendpoints.azurewebsites.net/minichallenge/oddoreven/" + numInput.value;
         urlCall(sayHelloUrl);
     } else {
         output.textContent = "Enter a valid response";

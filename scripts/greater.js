@@ -1,3 +1,4 @@
+let num1Input = document.getElementById("num1Input");
 let num2Input = document.getElementById("num2Input");
 let output = document.getElementById("output");
 let submitBtn = document.getElementById("submitBtn");
@@ -8,8 +9,19 @@ let savedInput = "";
 let sayHelloUrl = "";
 
 submitBtn.addEventListener("click", function(){
-    // helloApi(nameInput); // Using Scott's Example
-    addTwo(num2Input);
+    greaterThan(num1Input, num2Input);
+});
+
+num1Input.addEventListener("keypress", function(key){
+    if (key.key === "Enter") {
+        greaterThan(num1Input, num2Input);
+    }
+});
+
+num2Input.addEventListener("keypress", function(key){
+    if (key.key === "Enter") {
+        greaterThan(num1Input, num2Input);
+    }
 });
 
 function urlCall(url){
@@ -23,12 +35,11 @@ function urlCall(url){
     )
 }
 
-function addTwo(num2Input) {
-    if(num2Input.value) {
-        savedInput = num2Input.value;
-        sayHelloUrl = "https://allinoneendpoints.azurewebsites.net/minichallenge/greaterthan/5/" + savedInput;
+function greaterThan(num1input, num2Input) {
+    if(num1Input.value && num2Input.value) {
+        sayHelloUrl = `https://allinoneendpoints.azurewebsites.net/minichallenge/greaterthan/${num1Input.value}/${num2Input.value}`;
         urlCall(sayHelloUrl);
     } else {
-        output.textContent = "Enter a valid response";
+        output.textContent = "Please fill out both fields";
     }
 }
