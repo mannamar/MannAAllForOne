@@ -1,26 +1,54 @@
 let input = document.getElementById("input");
-let output = document.getElementById("output");
+let firstName = document.getElementById("firstName");
+let lastName = document.getElementById("lastName");
+let slackName = document.getElementById("slackName");
+let email = document.getElementById("email");
+let hobbies = document.getElementById("hobbies");
+let lookupList = document.getElementById("lookupList");
+let studentList = document.getElementById("studentList");
 let submitBtn = document.getElementById("submitBtn");
 
-// console.log(nameInput, helloReturn, helloSubBtn); // Log variables to console
-
-let savedInput = "";
-let sayHelloUrl = "";
 
 submitBtn.addEventListener("click", function(){
-    // helloApi(nameInput); // Using Scott's Example
-    byFirstName(input);
-    byLastName(input);
-    bySlackName(input);
-    byEmail(input);
+    if (lookupList.value === "firstName") {
+        byFirstName(input);
+    } else if (lookupList.value === "lastName") {
+        byLastName(input);
+    } else if (lookupList.value === "slackName") {
+        bySlackName(input);
+    } else if (lookupList.value === "email") {
+        byEmail(input);
+    }
+});
+
+studentList.addEventListener("change", function(){
+    byFirstName(studentList);
+});
+
+input.addEventListener("keypress", function(key){
+    if (key.key === "Enter") {
+        if (lookupList.value === "firstName") {
+            byFirstName(input);
+        } else if (lookupList.value === "lastName") {
+            byLastName(input);
+        } else if (lookupList.value === "slackName") {
+            bySlackName(input);
+        } else if (lookupList.value === "email") {
+            byEmail(input);
+        }
+    }
 });
 
 function urlCall(url){
     fetch(url).then(
-        response => response.text()
+        response => response.json()
     ).then(
         data => {
-            output.textContent = data
+            firstName.textContent = data.firstName
+            lastName.textContent = data.lastName
+            slackName.textContent = data.slackName
+            email.textContent = data.email
+            hobbies.textContent = data.hobbies
             console.log(data)
         }
     )
@@ -39,11 +67,11 @@ function consoleCall(url){
 
 function byFirstName(input) {
     if(input.value) {
-        savedInput = input.value;
-        sayHelloUrl = "https://allinoneendpoints.azurewebsites.net/studentdirectory/byfirstname/" + savedInput;
+        let savedInput = input.value;
+        let sayHelloUrl = "https://allinoneendpoints.azurewebsites.net/studentdirectory/byfirstname/" + savedInput;
         urlCall(sayHelloUrl);
     } else {
-        output.textContent = "Enter a valid response";
+        // output.textContent = "Enter a valid response";
     }
 }
 
@@ -51,8 +79,8 @@ function byLastName(input) {
     if(input.value) {
         let savedInput = input.value;
         let lastNameUrl = "https://allinoneendpoints.azurewebsites.net/studentdirectory/bylastname/" + savedInput;
-        // urlCall(lastNameUrl);
-        consoleCall(lastNameUrl);
+        urlCall(lastNameUrl);
+        // consoleCall(lastNameUrl);
     } else {
         output.textContent = "Enter a valid response";
     }
@@ -62,8 +90,8 @@ function bySlackName(input) {
     if(input.value) {
         let savedInput = input.value;
         let slackNameUrl = "https://allinoneendpoints.azurewebsites.net/studentdirectory/byslackname/" + savedInput;
-        // urlCall(slackNameUrl);
-        consoleCall(slackNameUrl);
+        urlCall(slackNameUrl);
+        // consoleCall(slackNameUrl);
     } else {
         output.textContent = "Enter a valid response";
     }
@@ -73,8 +101,8 @@ function byEmail(input) {
     if(input.value) {
         let savedInput = input.value;
         let emailUrl = "https://allinoneendpoints.azurewebsites.net/studentdirectory/byemail/" + savedInput;
-        // urlCall(emailUrl);
-        consoleCall(emailUrl);
+        urlCall(emailUrl);
+        // consoleCall(emailUrl);
     } else {
         output.textContent = "Enter a valid response";
     }

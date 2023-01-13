@@ -28,18 +28,30 @@
         <div class="row gx-35">
             <div class="col-6">
                 <h2>Select a student:</h2>
-                <input name="" id="nameInput" class="form w-100 inp-fld " type="text" placeholder="Amar Mann">
+                <!-- <input name="" id="nameInput" class="form w-100 inp-fld " type="text" placeholder="Amar Mann"> -->
+                <select name="foods" id="studentList" class="form w-100 inp-fld " type="text" >
+                    <option value="Amar">Amar Mann</option>
+                    <option value="Danny">Danny Tran</option>
+                    <option value="Ken">Ken Martinez</option>
+                    <option value="Scott">Scott Morenzone</option>
+                </select>
                 <div class="row sec-row">
                     <div class="col">
                         <h2>Or lookup:</h2>
-                        <input name="" id="nameInput" class="form w-100 inp-fld " type="text" placeholder="Amar">
+                        <input name="" id="input" class="form w-100 inp-fld " type="text" placeholder="Amar">
                     </div>
                     <div class="col">
                         <h2>By:</h2>
-                        <input name="" id="nameInput" class="form w-100 inp-fld " type="text" placeholder="First Name">
+                        <!-- <input name="" id="nameInput" class="form w-100 inp-fld " type="text" placeholder="First Name"> -->
+                        <select name="foods" id="lookupList" class="form w-100 inp-fld " type="text" >
+                            <option value="firstName">First Name</option>
+                            <option value="lastName">Last Name</option>
+                            <option value="slackName">Slack Name</option>
+                            <option value="email">E-Mail</option>
+                        </select>
                     </div>
                     <div class="row d-flex justify-content-center">
-                        <button class="btn btn-dark btn-submit">Submit</button>
+                        <button id="submitBtn" class="btn btn-dark btn-submit">Submit</button>
                     </div>
                 </div>
             </div>
@@ -55,11 +67,11 @@
                         <p class="dir-text">Hobbies:</p>
                     </div>
                     <div class="col-7 text-center">
-                        <p class="dir-text">Amar</p>
-                        <p class="dir-text">Mann</p>
-                        <p class="dir-text">Amar</p>
-                        <p class="dir-text">amann@codestack.co</p>
-                        <p class="dir-text">Kicking rocks</p>
+                        <p id="firstName" class="dir-text">Amar</p>
+                        <p id="lastName" class="dir-text">Mann</p>
+                        <p id="slackName" class="dir-text">Amar</p>
+                        <p id="email" class="dir-text">amann@codestack.co</p>
+                        <p id="hobbies" class="dir-text">Kicking rocks</p>
                     </div>
                 </div>
             </div>
