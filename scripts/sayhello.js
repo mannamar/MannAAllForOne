@@ -15,7 +15,10 @@ helloSubBtn.addEventListener("click", function(){
 nameInput.addEventListener("keypress", function(key){
     // helloApi(nameInput); // Using Scott's Example
     if (key.key === "Enter") {
+        // helloReturn.classList.remove("fadeIn");
+        // void helloReturn.offsetWidth;
         sayHello(nameInput);
+        // helloReturn.classList.add("fadeIn");
     }
 });
 
@@ -24,7 +27,10 @@ function urlCall(url){
         response => response.text()
     ).then(
         data => {
+            helloReturn.classList.remove("fadeIn");
+            void helloReturn.offsetWidth;
             helloReturn.textContent = data
+            helloReturn.classList.add("fadeIn");
             console.log(data)
         }
     )

@@ -7,6 +7,7 @@ let hobbies = document.getElementById("hobbies");
 let lookupList = document.getElementById("lookupList");
 let studentList = document.getElementById("studentList");
 let submitBtn = document.getElementById("submitBtn");
+let output = document.getElementById("output");
 
 
 submitBtn.addEventListener("click", function(){
@@ -48,11 +49,16 @@ function urlCall(url){
         response => response.json()
     ).then(
         data => {
+            output.classList.remove("fadeIn");
+            void output.offsetWidth;
+            
             firstName.textContent = data.firstName
             lastName.textContent = data.lastName
             slackName.textContent = data.slackName
             email.textContent = data.email
             hobbies.textContent = data.hobbies
+
+            output.classList.add("fadeIn");
             console.log(data)
         }
     )

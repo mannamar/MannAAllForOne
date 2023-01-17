@@ -29,7 +29,10 @@ function urlCall(url){
         response => response.text()
     ).then(
         data => {
+            output.classList.remove("fadeIn");
+            void output.offsetWidth;
             output.textContent = data
+            output.classList.add("fadeIn");
             console.log(data)
         }
     )

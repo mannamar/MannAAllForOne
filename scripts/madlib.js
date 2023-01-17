@@ -18,13 +18,22 @@ submitBtn.addEventListener("click", function(){
     ask(input1, input2, input3, input4, input5, input6, input7, input8, input9, input10);
 });
 
+input10.addEventListener("keypress", function(key){
+    if (key.key === "Enter") {
+        ask(input1, input2, input3, input4, input5, input6, input7, input8, input9, input10);
+    }
+});
+
 function urlCall(url){
     fetch(url).then(
         response => response.text()
     ).then(
         data => {
-            output.textContent = data
-            console.log(data)
+            output.classList.remove("fadeIn");
+            void output.offsetWidth;
+            output.textContent = data;
+            output.classList.add("fadeIn");
+            console.log(data);
         }
     )
 }
