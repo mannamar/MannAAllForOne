@@ -92,7 +92,7 @@ function byLastName(input) {
         urlCall(lastNameUrl);
         // consoleCall(lastNameUrl);
     } else {
-        output.textContent = "Enter a valid response";
+        // output.textContent = "Enter a valid response";
     }
 }
 
@@ -103,7 +103,7 @@ function bySlackName(input) {
         urlCall(slackNameUrl);
         // consoleCall(slackNameUrl);
     } else {
-        output.textContent = "Enter a valid response";
+        // output.textContent = "Enter a valid response";
     }
 }
 
@@ -114,7 +114,7 @@ function byEmail(input) {
         urlCall(emailUrl);
         // consoleCall(emailUrl);
     } else {
-        output.textContent = "Enter a valid response";
+        // output.textContent = "Enter a valid response";
     }
 }
 
@@ -125,7 +125,7 @@ function byAny(input) {
         urlCall(anyUrl);
         // consoleCall(emailUrl);
     } else {
-        output.textContent = "Enter a valid response";
+        // output.textContent = "Enter a valid response";
     }
 }
 
