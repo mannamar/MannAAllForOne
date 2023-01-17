@@ -172,4 +172,18 @@ nav a:hover { color: white !important; }
     .output {
         font-size: 30px;
     }
+
+    .text-righty h3 {
+        padding-right: 30px;
+        font-size: 25px;
+        padding-top: 7px;
+    }
+
+    .mad-cont {
+        max-width: 100%;
+    }
+
+    .mad-inp-fld {
+        margin-bottom: 30px;
+    }
   }
