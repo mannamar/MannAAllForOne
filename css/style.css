@@ -130,3 +130,46 @@ nav a:hover { color: white !important; }
     font-family: 'Outfit', sans-serif;
     font-size: 24px;
 }
+
+@media (max-width: 600px) {
+    .pages-cont {
+      max-width: 90%;
+    }
+
+    .btn-cont {
+        max-width: 80%;
+    }
+
+    h1 {
+        font-size: 55px;
+    }
+
+    .hero-cont {
+        margin-bottom: 35px;
+    }
+
+    .btn-submit {
+        margin-bottom: 50px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    .dir-text {
+        font-size: 18px;
+    }
+
+    .inp-fld,
+    .mad-inp-fld {
+        font-size: 22px;
+    }
+
+    .output {
+        font-size: 30px;
+    }
+  }
