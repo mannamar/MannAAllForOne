@@ -18,6 +18,8 @@ submitBtn.addEventListener("click", function(){
         bySlackName(input);
     } else if (lookupList.value === "email") {
         byEmail(input);
+    } else if (lookupList.value === "any") {
+        byAny(input);
     }
 });
 
@@ -35,6 +37,8 @@ input.addEventListener("keypress", function(key){
             bySlackName(input);
         } else if (lookupList.value === "email") {
             byEmail(input);
+        } else if (lookupList.value === "any") {
+            byAny(input);
         }
     }
 });
@@ -102,6 +106,17 @@ function byEmail(input) {
         let savedInput = input.value;
         let emailUrl = "https://allinoneendpoints.azurewebsites.net/studentdirectory/byemail/" + savedInput;
         urlCall(emailUrl);
+        // consoleCall(emailUrl);
+    } else {
+        output.textContent = "Enter a valid response";
+    }
+}
+
+function byAny(input) {
+    if(input.value) {
+        let savedInput = input.value;
+        let anyUrl = "https://allinoneendpoints.azurewebsites.net/studentdirectory/byany/" + savedInput;
+        urlCall(anyUrl);
         // consoleCall(emailUrl);
     } else {
         output.textContent = "Enter a valid response";

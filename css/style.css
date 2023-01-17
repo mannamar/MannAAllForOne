@@ -13,6 +13,7 @@ h2 {
     font-weight: bold;
     text-align: center;
     padding-bottom: 35px;
+    margin: 0;
 }
 
 h3 {
@@ -20,6 +21,7 @@ h3 {
     font-size: 38px;
     font-weight: bold;
     padding-bottom: 20px;
+    margin: 0;
 }
 
 nav a:hover { color: white !important; }
@@ -105,19 +107,19 @@ nav a:hover { color: white !important; }
 .inp-fld {
     height: 47px;
     font-family: 'Outfit', sans-serif;
-    font-size: 36px;
+    font-size: 30px;
     text-align: center;
 }
 
 .mad-inp-fld {
     height: 47px;
     font-family: 'Outfit', sans-serif;
-    font-size: 36px;
+    font-size: 30px;
     text-align: center;
 }
 
 .sec-row {
-    padding-top: 60px;
+    padding-top: 35px;
 }
 
 .text-righty {

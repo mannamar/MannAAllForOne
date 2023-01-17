@@ -26,7 +26,7 @@
     <div class="container-fluid pages-cont">
 
         <div class="row gx-35">
-            <div class="col-12 col-sm-6">
+            <div class="col-12 col-lg-6">
                 <h2>Select a student:</h2>
                 <!-- <input name="" id="nameInput" class="form w-100 inp-fld " type="text" placeholder="Amar Mann"> -->
                 <select name="students" id="studentList" class="form w-100 inp-fld " type="text" >
@@ -45,6 +45,7 @@
                         <h2>By:</h2>
                         <!-- <input name="" id="nameInput" class="form w-100 inp-fld " type="text" placeholder="First Name"> -->
                         <select name="foods" id="lookupList" class="form w-100 inp-fld " type="text" >
+                            <option value="any">Any</option>
                             <option value="firstName">First Name</option>
                             <option value="lastName">Last Name</option>
                             <option value="slackName">Slack Name</option>
@@ -56,22 +57,46 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6">
+            <div class="col-12 col-lg-6">
                 <h2>Output:</h2>
                 <!-- <p id ="helloReturn" class="output">Good day to you Amar!</p> -->
                 <div class="row">
                     <div class="col-5 text-righty">
                         <p class="dir-text">First Name:</p>
-                        <p class="dir-text">Last Name:</p>
-                        <p class="dir-text">Slack Name:</p>
-                        <p class="dir-text">E-Mail:</p>
-                        <p class="dir-text">Hobbies:</p>
                     </div>
                     <div class="col-7 text-center">
                         <p id="firstName" class="dir-text">Amar</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 text-righty"> 
+                        <p class="dir-text">Last Name:</p>
+                    </div>
+                    <div class="col-7 text-center">
                         <p id="lastName" class="dir-text">Mann</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 text-righty">
+                        <p class="dir-text">Slack Name:</p>
+                    </div>
+                    <div class="col-7 text-center">
                         <p id="slackName" class="dir-text">Amar</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 text-righty">
+                        <p class="dir-text">E-Mail:</p>
+                    </div>
+                    <div class="col-7 text-center">
                         <p id="email" class="dir-text">amann@codestack.co</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 text-righty">
+                        <p class="dir-text">Hobbies:</p>
+                    </div>
+                    <div class="col-7 text-center">
                         <p id="hobbies" class="dir-text">Kicking rocks</p>
                     </div>
                 </div>
